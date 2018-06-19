@@ -1,0 +1,180 @@
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8">
+      
+              <h1> Employee ID Card Form</h1>
+        
+      </div>
+      <div class="col-sm-2"></div>
+  </div>
+  <form [formGroup]="idFormGroup">
+      <div class="form-group row">
+          <label for="firstName" class="col-sm-2 col-form-label">First Name</label>
+          <div class="col-sm-8">
+              <input type="text" class="form-control" formControlName="firstName" placeholder="First Name or Prefered Name">
+                                  
+          </div>
+          <span id="firstNameError" class="alert alert-danger" *ngIf="idFormGroup.get('firstName').touched && idFormGroup.get('firstName').errors">Please enter first name</span>
+          
+      </div>
+      <div class="form-group row">
+          <label for="fullName" class="col-sm-2 col-form-label">Full Name</label>
+          <div class="col-sm-8">
+              <input type="text" class="form-control" formControlName="fullName" placeholder="Full Name">
+              
+          </div>
+          <span id="fullNameError" class="alert alert-danger" *ngIf="idFormGroup.get('fullName').touched && idFormGroup.get('fullName').errors">Please enter full name</span>
+          
+      </div>
+      <div class="form-group row">
+          <label for="designation" class="col-sm-2 col-form-label">
+            ignation</label>
+          <div class="col-sm-8">
+              <input type="text" class="form-control" formControlName="desig" placeholder="Designation">
+              
+          </div>
+          <span id="DesignationError" class="alert alert-danger" *ngIf="idFormGroup.get('desig').touched && idFormGroup.get('desig').errors">Please enter designation</span>
+          
+      </div>
+      <div class="form-group row">
+          <label for="employeeCode" class="col-sm-2 col-form-label">Employee Code</label>
+          <div class="col-sm-8">
+              <input type="text" class="form-control" formControlName="empCode" placeholder="Employee Code">
+              
+          </div>
+          <span id="empCodeError" class="alert alert-danger" *ngIf="idFormGroup.get('empCode').touched && idFormGroup.get('empCode').errors">Please enter empcode</span>
+          
+      </div>
+
+      <div class="form-group row">
+          <label for="bloodGroup" class="col-sm-2 col-form-label">Blood Group</label>
+          <div class="col-sm-8">
+              <input type="text" class="form-control" formControlName="bloodGroup" placeholder="Blood Group">
+          </div>
+          <span id="bloodgrpError" class="alert alert-danger" *ngIf="idFormGroup.get('bloodGroup').touched && idFormGroup.get('bloodGroup').errors">Please enter blood group</span>
+          
+      </div>
+
+
+      <fieldset class="form-group">
+          <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Reasons for Issue</legend>
+              <div class="col-sm-8">
+                  <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="newEmployee" value="option1" checked>
+                      <label class="form-check-label" for="newEmployee">
+                New Employee
+              </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="lost" value="option2">
+                      <label class="form-check-label" for="lost">
+                Lost
+              </label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="defaced" value="option3">
+                      <label class="form-check-label" for="defaced">
+                    Defaced
+                  </label>
+                  </div>
+
+
+                  <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="conversion" value="option4">
+                      <label class="form-check-label" for="conversion">
+                    Conversion
+                  </label>
+                  </div>
+
+
+                  <div class="form-check form-check-inline  ">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="designationChange" value="option5">
+                      <label class="form-check-label" for="designationChange">
+                    Designation Change
+                  </label>
+                  </div>
+
+
+              </div>
+          </div>
+      </fieldset>
+      <!--
+      <div class="form-group row">
+          <label for="doj" class="col-sm-2 col-form-label">Date of Employement</label>
+
+          <div class="col-sm-8">
+              <div class="input-group">
+                  <div class="input-group-addon">
+                      <i class="fa fa-calendar">
+                      </i>
+                  </div>
+                  <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text" />
+              </div>
+          </div>
+      </div>
+    -->
+
+
+      <div class="form-group row">
+          <label for="email" class="col-sm-2 col-form-label">Email</label>
+          <div class="col-sm-8">
+              <input type="text" class="form-control" formControlName="email" placeholder="@virtusa.com">
+              
+          </div>
+          <span id="emailError" class="alert alert-danger" *ngIf="idFormGroup.get('email').touched && idFormGroup.get('email').errors">Please enter email</span>
+          
+      </div>
+
+      <div class="form-group row">
+          <label for="employeeNumber" class="col-sm-2 col-form-label">Employee Mobile Number</label>
+          <div class="col-sm-8">
+              <input type="text" class="form-control" formControlName="empNo" placeholder="Employee Number">
+              
+          </div>
+          <span id="empnoError" class="alert alert-danger" *ngIf="idFormGroup.get('empNo').touched && idFormGroup.get('empNo').errors">Please enter emp no</span>
+          
+      </div>
+      <div class="form-group row">
+          <label for="EmergencyContact" class="col-sm-2 col-form-label">Emergency Contact Number</label>
+          <div class="col-sm-8" (change)="log()">
+              <input type="text" class="form-control" formControlName="emergencyNo" placeholder="Emergency Contact">
+              
+          </div>
+          <span id="emernoError" class="alert alert-danger" *ngIf="idFormGroup.get('emergencyNo').touched && idFormGroup.get('emergencyNo').errors">Please enter emergencyNo</span>
+          
+      </div>
+
+
+
+
+
+
+<!--
+      <div class="form-group row">
+          <label for="doj" class="col-sm-2 col-form-label">Date applied for ID</label>
+
+          <div class="col-sm-8">
+              <div class="input-group">
+                  <div class="input-group-addon">
+                      <i class="fa fa-calendar">
+                </i>
+                  </div>
+                  <input class="form-control" id="dateApplied" name="dateApplied" placeholder="MM/DD/YYYY" type="text" />
+              </div>
+          </div>
+  </div>
+-->
+
+      <div class="form-group row">
+          <div class="col-sm-10">
+            <div>
+                  <button type="submit" (click)="onSubmit()" class="btn btn-primary" [disabled]="idFormGroup.invalid" >submit</button>
+           </div>
+          </div>
+      </div>
+  </form>
+
+</div>
